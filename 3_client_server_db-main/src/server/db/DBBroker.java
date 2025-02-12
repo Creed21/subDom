@@ -190,9 +190,11 @@ public class DBBroker {
         return false;
     }
 
+    // TODO primenuj metodu jer upit pretrazuje profesore po imenu li prezimenu
     public List<Profesor> getProfesorsByName(String name) {
     
     List<Profesor> profesors = new ArrayList<>();
+    // TODO proveri ovaj upit jos jednom
     String query = "SELECT * FROM profesor WHERE imeime = ? OR prezime = ?";
 
     try (PreparedStatement ps = connection.prepareStatement(query)) {
